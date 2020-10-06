@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+      <meta charset="UTF-8">
+      <title> Crud Básico </title>
+    </head>
+    <body>
+
+    <h3>Editando lançamentos </h3>
+      <% data.forEach(function(details) { %>
+        <form action="/edit/<%= details._id %>" method="POST">
+          <input type="text" value="<%= details.name %>" name="name">
+          <input type="text" value="<%= details.surname %>" name="surname">
+          <input type="int" value="<%= details.age %>" name="age">
+          <input type="text" value="<%= details.estadocivil %>" name="estadocivil">
+          <br />
+          <button><a href="/show">VOLTAR</a></button>
+          <button type="submit">EDITAR</button>
+        </form>
+      <% }) %>
+
+    </body>
+</html>
